@@ -9,6 +9,6 @@
 </ul>
 
 <h3>Introduction</h3>
-This is a responsive website for Coc Sai Gon's Halloween project 2023, We use this website as a "Halloween passport" - where users can check for Names, Student numbers, Halloween codes, <b>Tracking for missions progress & status in real time</b>. I currently use <b>Google Sheet to store all of my website's datas</b>.
+This is a responsive website for Coc Sai Gon's Halloween project 2023, We use this website as a "Halloween passport" - where users can check for Names, Student numbers, Halloween codes, <b>Tracking for missions progress & status in real time</b>. I currently using <b>Google Sheet to store all of my website's datas</b>.
 
 
