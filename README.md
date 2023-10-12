@@ -9,6 +9,6 @@
 </ul>
 
 <h3>Introduction</h3>
-This is a responsive website for Coc Sai Gon's Halloween project 2023, this Website connect with Googlesheet and track user data in realtime, it update users after they register through google form under 5 seconds. Also it track users progress base on formula i wrote inside Googlesheet and show on the website. Users simply enter a website, enter their student code and their informations will rise up
+This is a responsive website for Coc Sai Gon's Halloween project 2023, We use this website as a "Halloween passport" - where user can check for Names, Student numbers, Halloween codes, <b>Tracking for missions progress & status in real time</b>. I currently use <b>Google Sheet to store all of my website's datas</b>.
 
 
