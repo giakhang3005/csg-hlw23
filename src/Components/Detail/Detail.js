@@ -9,7 +9,7 @@ import {
   Empty,
   Button,
   Spin,
-  Alert,
+  Popover,
 } from "antd";
 import { LeftOutlined, GiftFilled } from "@ant-design/icons";
 import { useParams, useNavigate } from "react-router-dom";
@@ -24,6 +24,11 @@ export function Detail() {
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
+
+  const doneMsg = "Đã hoàn thành";
+  const notDoneMsg = "Chưa hoàn thành";
+  const notReceiveMsg = "Chưa nhận";
+  const ReceiveMsg = "Đã nhận";
 
   const navigate = useNavigate();
 
@@ -88,39 +93,73 @@ export function Detail() {
                 </Col>
               </Row>
 
-            {/* TRACK STATUS */}
+              {/* TRACK STATUS */}
               <Row className="rowDetail">
                 <Col xs={1}></Col>
                 <Col xs={4}>
-                  <Tag color={user[0]?.tram1 === "TRUE" ? "green" : "red"}>
-                    Trạm 1
-                  </Tag>
+                  <Popover
+                    content={user[0]?.tram1 === "TRUE" ? doneMsg : notDoneMsg}
+                  >
+                    <Tag color={user[0]?.tram1 === "TRUE" ? "green" : "red"}>
+                      Trạm 1
+                    </Tag>
+                  </Popover>
                 </Col>
                 <Col xs={4}>
-                  <Tag color={user[0]?.tram2 === "TRUE" ? "green" : "red"}>
-                    Trạm 2
-                  </Tag>
+                  <Popover
+                    content={user[0]?.tram2 === "TRUE" ? doneMsg : notDoneMsg}
+                  >
+                    <Tag color={user[0]?.tram2 === "TRUE" ? "green" : "red"}>
+                      Trạm 2
+                    </Tag>
+                  </Popover>
                 </Col>
                 <Col xs={4}>
-                  <Tag color={user[0]?.tram3 === "TRUE" ? "green" : "red"}>
-                    Trạm 3
-                  </Tag>
+                  <Popover
+                    content={user[0]?.tram3 === "TRUE" ? doneMsg : notDoneMsg}
+                  >
+                    <Tag color={user[0]?.tram3 === "TRUE" ? "green" : "red"}>
+                      Trạm 3
+                    </Tag>
+                  </Popover>
                 </Col>
                 <Col xs={4}>
-                  <Tag color={user[0]?.tram4 === "TRUE" ? "green" : "red"}>
-                    Trạm 4
-                  </Tag>
+                  <Popover
+                    content={user[0]?.tram4 === "TRUE" ? doneMsg : notDoneMsg}
+                  >
+                    <Tag color={user[0]?.tram4 === "TRUE" ? "green" : "red"}>
+                      Trạm 4
+                    </Tag>
+                  </Popover>
                 </Col>
                 <Col xs={4}>
-                  <Tag color={user[0]?.tram5 === "TRUE" ? "green" : "red"}>
-                    Trạm 5
-                  </Tag>
+                  <Popover
+                    content={user[0]?.tram5 === "TRUE" ? doneMsg : notDoneMsg}
+                  >
+                    <Tag color={user[0]?.tram5 === "TRUE" ? "green" : "red"}>
+                      Trạm 5
+                    </Tag>
+                  </Popover>
                 </Col>
-                <Col xs={2} style={Object.assign({fontSize: '18px'}, {color: user[0]?.prize === "TRUE" ? '#0fab36' : 'red'})}><GiftFilled /></Col>
+                <Popover
+                  content={
+                    user[0]?.prize === "TRUE" ? ReceiveMsg : notReceiveMsg
+                  }
+                >
+                  <Col
+                    xs={2}
+                    style={Object.assign(
+                      { fontSize: "18px" },
+                      { color: user[0]?.prize === "TRUE" ? "#0fab36" : "red" }
+                    )}
+                  >
+                    <GiftFilled />
+                  </Col>
+                </Popover>
                 <Col xs={1}></Col>
               </Row>
 
-            {/* QR CODE */}
+              {/* QR CODE */}
               <Row style={{ margin: "20px 0 0 0" }}>
                 <Col xs={6}></Col>
                 <Col xs={10}>
@@ -131,7 +170,7 @@ export function Detail() {
             </>
           ) : (
             <>
-            {/* EMPTY */}
+              {/* EMPTY */}
               <Empty description={`MSSV ${code} chưa đăng ký tham gia`}>
                 <Button type="primary">ĐĂNG KÝ</Button>
               </Empty>
