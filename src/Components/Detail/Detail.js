@@ -77,7 +77,9 @@ export function Detail() {
           </Row>
         </>
       ) : (
-        <Empty description={`Code ${code} không tồn tại`} />
+        <Empty description={`MSSV ${code} chưa đăng ký tham gia`} > 
+           <Button type="primary">ĐĂNG KÝ</Button>
+        </Empty>
       )}
     </div>
   );

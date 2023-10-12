@@ -9,7 +9,7 @@ export function InputCode() {
   const navigate = useNavigate();
 
   const handleSubmit = () => {
-    const input = document.querySelector("input").value;
+    const input = document.querySelector("input").value.toUpperCase();
     navigate(`/${input}`);
   };
   return (
