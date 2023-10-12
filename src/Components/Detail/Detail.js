@@ -11,7 +11,7 @@ import {
   Spin,
   Alert,
 } from "antd";
-import { LeftOutlined } from "@ant-design/icons";
+import { LeftOutlined, GiftFilled } from "@ant-design/icons";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
@@ -90,7 +90,7 @@ export function Detail() {
 
             {/* TRACK STATUS */}
               <Row className="rowDetail">
-                <Col xs={2}></Col>
+                <Col xs={1}></Col>
                 <Col xs={4}>
                   <Tag color={user[0]?.tram1 === "TRUE" ? "green" : "red"}>
                     Trạm 1
@@ -116,7 +116,8 @@ export function Detail() {
                     Trạm 5
                   </Tag>
                 </Col>
-                <Col xs={2}></Col>
+                <Col xs={2} style={Object.assign({fontSize: '18px'}, {color: user[0]?.prize === "TRUE" ? '#0fab36' : 'red'})}><GiftFilled /></Col>
+                <Col xs={1}></Col>
               </Row>
 
             {/* QR CODE */}
