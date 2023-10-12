@@ -4,7 +4,8 @@ import "./Nav.css"
 export function Nav() {
   return (
     <>
-    <img className='logo' src="./logowhite.png" />
+    <img className='logo' src="./assets/logowhite.png" />
+    <img className='fpt' src="./assets/logofpt.png" />
     </>
   )
 }
