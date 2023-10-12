@@ -10,12 +10,7 @@ export function InputCode() {
 
   const handleSubmit = () => {
     const input = document.querySelector("input").value;
-    if (input.length < 4) {
-      message.error("Code không hợp lệ");
-    } else {
-      const fullCode = `HLW23${input}`;
-      navigate(`/${fullCode}`);
-    }
+    navigate(`/${input}`);
   };
   return (
     <div className="inputCodeContainer">
@@ -29,9 +24,9 @@ export function InputCode() {
       >
         <Input
           showCount
-          maxLength={4}
-          prefix="HLW23"
-          placeholder="0000"
+          maxLength={20}
+          prefix={<b>MSSV: </b>}
+          placeholder="SE190001"
           style={Object.assign({ lineHeight: "33px" }, { background: "white" })}
         ></Input>
         <Button

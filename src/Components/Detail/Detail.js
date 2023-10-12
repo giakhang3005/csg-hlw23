@@ -16,7 +16,7 @@ export function Detail() {
         Back
       </Button>
       <Title level={3}>INFORMATIONS</Title>
-      {code === "HLW231234" ? (
+      {code === "SE171927" ? (
         <>
           <Row className="rowDetail">
             <Col xs={2}></Col>
