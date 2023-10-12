@@ -4,6 +4,7 @@
   left: calc(105px + 35px);
   height: 66px;
   filter: drop-shadow(0 0 4px rgb(255, 255, 255));
+  animation: fade 0.5s ease-in-out
 }
 .fpt {
   position: absolute;
@@ -11,6 +12,7 @@
   left: 18px;
   height: 54px;
   filter: drop-shadow(0 0 4px rgb(255, 192, 109));
+  animation: fade 0.75s ease-in-out
 }
 
 @media only screen and (max-width: 500px) {
@@ -23,4 +25,13 @@
         height: 34px;
         left: 5px;
     }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
