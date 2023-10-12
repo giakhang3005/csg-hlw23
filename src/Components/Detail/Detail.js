@@ -31,11 +31,11 @@ export function Detail() {
     data: user, //assign name for the data
     refetch,
   } = useQuery(["u"], () => {
-    return axios
-      .get(`https://sheetdb.io/api/v1/5ns7w9461kjnd/search?mssv=${code}`) //use api https://sheet.best/api/sheets/363b6a6f-20ca-4299-b4d2-b6c67ba11958/search?mssv=
+    return axios //https://sheet.best/api/sheets/363b6a6f-20ca-4299-b4d2-b6c67ba11958/search?mssv=
+      .get(`https://sheetdb.io/api/v1/5ns7w9461kjnd/search?mssv=${code}`)
       .then((response) => response.data)
       .catch()
-      .finally(setTimeout(() => setLoading(false), 800));
+      .finally(setTimeout(() => setLoading(false), 1000));
   });
   return (
     <div className="DetailContainer">
@@ -47,13 +47,13 @@ export function Detail() {
       >
         Back
       </Button>
-      <Title level={3}>INFORMATIONS</Title>
+      <Title level={3}>VÉ THÔNG HÀNH</Title>
 
       {
         //check loading state
         !loading ? (
           //if received data not empty && validate again mssv === code
-          user.length > 0 && user[0]?.mssv === code ? (
+          user?.length > 0 && user[0]?.mssv === code ? (
             <>
               {/* Name */}
               <Row className="rowDetail">
