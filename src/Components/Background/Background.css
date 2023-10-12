@@ -132,38 +132,3 @@
     bottom: -162px;
     animation-delay: 55s;
 }
-.background li:nth-child(13) {
-    left: 58%;
-    width: 137px;
-    height: 137px;
-    bottom: -137px;
-    animation-delay: 9s;
-}
-.background li:nth-child(14) {
-    left: 2%;
-    width: 114px;
-    height: 114px;
-    bottom: -114px;
-    animation-delay: 11s;
-}
-.background li:nth-child(15) {
-    left: 31%;
-    width: 199px;
-    height: 199px;
-    bottom: -199px;
-    animation-delay: 46s;
-}
-.background li:nth-child(16) {
-    left: 2%;
-    width: 162px;
-    height: 162px;
-    bottom: -162px;
-    animation-delay: 58s;
-}
-.background li:nth-child(17) {
-    left: 1%;
-    width: 117px;
-    height: 117px;
-    bottom: -117px;
-    animation-delay: 83s;
-}
