@@ -15,6 +15,8 @@ import { LeftOutlined } from "@ant-design/icons";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+//https://sheet.best/admin
+// /https://docs.google.com/spreadsheets/d/1rDO_bu_1l6A7x5eclJ2QLIdywDwqA3es3p9LAiFFFsQ/edit#gid=0
 
 export function Detail() {
   const { Title } = Typography;
@@ -30,7 +32,7 @@ export function Detail() {
     refetch,
   } = useQuery(["u"], () => {
     return axios
-      .get(`https://sheetdb.io/api/v1/5ns7w9461kjnd/search?mssv=${code}`)
+      .get(`https://sheetdb.io/api/v1/5ns7w9461kjnd/search?mssv=${code}`) //use api https://sheet.best/api/sheets/363b6a6f-20ca-4299-b4d2-b6c67ba11958/search?mssv=
       .then((response) => response.data)
       .catch()
       .finally(setTimeout(() => setLoading(false), 800));
