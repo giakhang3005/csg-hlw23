@@ -1,13 +1,20 @@
 import React from "react";
 import "./Detail.css";
 import { Row, Col, Typography, Tag, QRCode, Empty, Button } from "antd";
-import { useParams } from "react-router-dom";
+import { LeftOutlined } from "@ant-design/icons";
+import { useParams, useNavigate } from "react-router-dom";
 
 export function Detail() {
   const { Title } = Typography;
   const code = useParams().code;
+
+  const navigate = useNavigate();
+
   return (
     <div className="DetailContainer">
+      <Button className="back" type="text" icon={<LeftOutlined />} onClick={() => navigate("/")}>
+        Back
+      </Button>
       <Title level={3}>INFORMATIONS</Title>
       {code === "HLW231234" ? (
         <>
@@ -61,7 +68,7 @@ export function Detail() {
             <Col xs={2}></Col>
           </Row>
 
-          <Row style={{ margin: "9px 0 0 0" }}>
+          <Row style={{ margin: "20px 0 0 0" }}>
             <Col xs={6}></Col>
             <Col xs={10}>
               <QRCode size={180} value={code}></QRCode>

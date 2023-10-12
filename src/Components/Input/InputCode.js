@@ -1,21 +1,25 @@
 import React from "react";
 import "./Input.css";
-import { Input, Button, Space, Typography } from "antd";
+import { Input, Button, Space, Typography, message } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
 export function InputCode() {
-  const {Title} = Typography;
+  const { Title } = Typography;
   const navigate = useNavigate();
 
   const handleSubmit = () => {
-    const input = document.querySelector('input').value;
-    const fullCode = `HLW23${input}`
-    navigate(`/${fullCode}`)
-  }
+    const input = document.querySelector("input").value;
+    if (input.length < 4) {
+      message.error("Code không hợp lệ");
+    } else {
+      const fullCode = `HLW23${input}`;
+      navigate(`/${fullCode}`);
+    }
+  };
   return (
     <div className="inputCodeContainer">
-      <Title style={Object.assign({color: 'white'})}>SEARCH</Title>
+      <Title style={Object.assign({ color: "white" })}>SEARCH</Title>
       <Space.Compact
         style={Object.assign(
           { boxShadow: "0 0 10px white" },

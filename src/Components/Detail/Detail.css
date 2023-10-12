@@ -4,7 +4,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 350px;
-    height: 400px;
+    height: 450px;
     background-color: rgb(215, 214, 214);
     border-radius: 12px;
     box-shadow: 0 0 15px white;
@@ -18,5 +18,11 @@
     font-size: 16px;
 }
 .rowDetail {
-    margin: 16px 0 0 0;
+    margin: 25px 0 0 0;
+}
+.back {
+    position: absolute;
+    left: 4px;
+    top: 2px;
+    padding: 2px;
 }

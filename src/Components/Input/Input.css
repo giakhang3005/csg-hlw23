@@ -1,3 +1,6 @@
+* {
+    animation: fade 0.25s ease-out;
+}
 .inputCodeContainer {
     width: 100%;
     text-align: center;
@@ -5,6 +8,12 @@
     top: 50%;
     transform: translateY(-50%);
 }
-.rowDetail {
-    margin: 15px 0 0 0;
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
