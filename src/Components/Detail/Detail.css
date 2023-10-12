@@ -1,0 +1,22 @@
+.DetailContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 400px;
+    background-color: rgb(215, 214, 214);
+    border-radius: 12px;
+    box-shadow: 0 0 15px white;
+    text-align: center;
+}
+.detailTitle {
+    font-weight: 500;
+    font-size: 16px;
+}
+.detailInfo{
+    font-size: 16px;
+}
+.rowDetail {
+    margin: 16px 0 0 0;
+}
