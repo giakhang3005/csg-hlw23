@@ -40,7 +40,7 @@ export function Detail() {
       .get(`https://sheetdb.io/api/v1/5ns7w9461kjnd/search?mssv=${code}`)
       .then((response) => response.data)
       .catch()
-      .finally(setTimeout(() => setLoading(false), 1200));
+      .finally(setTimeout(() => setLoading(false), 1500));
   });
   return (
     <div className="DetailContainer">
