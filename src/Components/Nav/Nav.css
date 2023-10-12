@@ -1,14 +1,26 @@
 .logo {
   position: absolute;
   top: 8px;
-  left: calc(90px + 3%);
+  left: calc(105px + 35px);
   height: 66px;
   filter: drop-shadow(0 0 4px rgb(255, 255, 255));
 }
 .fpt {
   position: absolute;
   top: 8px;
-  left: 1%;
+  left: 18px;
   height: 54px;
   filter: drop-shadow(0 0 4px rgb(255, 192, 109));
+}
+
+@media only screen and (max-width: 500px) {
+    .logo {
+        top: 7px;
+        height: 44px;
+        left: 85px;
+    }
+    .fpt {
+        height: 34px;
+        left: 5px;
+    }
 }
