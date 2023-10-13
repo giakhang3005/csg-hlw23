@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 export function InputCode() {
   const { Title } = Typography;
+
   const navigate = useNavigate();
 
   const [err, setErr] = useState(false);

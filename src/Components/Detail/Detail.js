@@ -10,6 +10,7 @@ import {
   Button,
   Spin,
   Popover,
+  message,
 } from "antd";
 import { LeftOutlined, GiftFilled, ToolFilled } from "@ant-design/icons";
 import { useParams, useNavigate } from "react-router-dom";
@@ -24,6 +25,7 @@ export function Detail() {
 
   const [loading, setLoading] = useState(true);
 
+  //Message
   const doneMsg = "Đã hoàn thành";
   const notDoneMsg = "Chưa hoàn thành";
   const notReceiveMsg = "Chưa nhận";
@@ -31,16 +33,30 @@ export function Detail() {
 
   const navigate = useNavigate();
 
-  const {
-    data: user, //assign name for the data
-    refetch,
-  } = useQuery(["u"], () => {
+  //reject the requests if user tried to enter by edit the website path
+  const rejectFetching = () => {
+    message.error("MSSV phải có ít nhất 8 kí tự");
+    navigate("/");
+  };
+
+  //Getting users data
+  const fetchingData = () => {
     return axios // https://sheet.best/api/sheets/363b6a6f-20ca-4299-b4d2-b6c67ba11958/search?mssv=
       .get(`https://sheetdb.io/api/v1/5ns7w9461kjnd/search?mssv=${code}`)
       .then((response) => response.data)
       .catch()
       .finally(setTimeout(() => setLoading(false), 1500));
+  };
+
+  //Use query
+  const {
+    data: user, //assign name for the data
+    refetch,
+  } = useQuery(["u"], () => {
+    //validate the path if user trying to edit it
+    return code.length < 8 ? rejectFetching() : fetchingData();
   });
+
   return (
     <div className="DetailContainer">
       <Button
@@ -51,20 +67,23 @@ export function Detail() {
       >
         Back
       </Button>
-      <Title level={3} style={Object.assign({ margin: '25px 0 0 0'}, {padding: 0})}>
+      <Title
+        level={3}
+        style={Object.assign({ margin: "25px 0 0 0" }, { padding: 0 })}
+      >
         VÉ THÔNG HÀNH
       </Title>
-      
+
       {
         //check loading state
         !loading ? (
           //if received data not empty && validate again mssv === code
           user?.length > 0 && user[0]?.mssv === code ? (
             <>
-            <p className="timestamp">{user[0]?.time}</p>
+              <p className="timestamp">{user[0]?.time}</p>
 
               {/* Name */}
-              <Row className="rowDetail" style={{margin: '18px 0 0 0'}}>
+              <Row className="rowDetail" style={{ margin: "18px 0 0 0" }}>
                 <Col xs={2}></Col>
                 <Col xs={5}>
                   <div className="detailTitle">TÊN:</div>
@@ -198,13 +217,18 @@ export function Detail() {
                   </>
                 }
               >
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8Qz8qGexqDgj_LYlqbn7g9EyHgtB9_764JM15vOtcyohOuA/viewform" target="_blank"><Button type="primary">ĐĂNG KÝ</Button></a>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSe8Qz8qGexqDgj_LYlqbn7g9EyHgtB9_764JM15vOtcyohOuA/viewform"
+                  target="_blank"
+                >
+                  <Button type="primary">ĐĂNG KÝ</Button>
+                </a>
               </Empty>
             </>
           )
         ) : (
           // LOADING ANIMATION
-          <Spin size="large" style={{margin: '164px 0 0 0'}} />
+          <Spin size="large" style={{ margin: "164px 0 0 0" }} />
         )
       }
     </div>
