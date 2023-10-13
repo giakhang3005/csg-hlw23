@@ -122,7 +122,7 @@ export function Detail() {
                   <div className="detailTitle">CODE:</div>
                 </Col>
                 <Col xs={17}>
-                  <div className="detailInfo preventCopy">{user[0]?.code}</div>
+                  <div className="detailInfo">{user[0]?.code}</div>
                 </Col>
               </Row>
 
