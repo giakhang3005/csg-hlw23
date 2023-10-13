@@ -89,7 +89,7 @@ export function Detail() {
                   <div className="detailTitle">TÊN:</div>
                 </Col>
                 <Col xs={17}>
-                  <div className="detailInfo">{user[0]?.name}</div>
+                  <div className="detailInfo preventCopy">{user[0]?.name}</div>
                 </Col>
               </Row>
 
@@ -111,7 +111,7 @@ export function Detail() {
                   <div className="detailTitle">EMAIL:</div>
                 </Col>
                 <Col xs={17}>
-                  <div className="detailInfo">{user[0]?.email}</div>
+                  <div className="detailInfo preventCopy">{user[0]?.email}</div>
                 </Col>
               </Row>
 
@@ -122,7 +122,7 @@ export function Detail() {
                   <div className="detailTitle">CODE:</div>
                 </Col>
                 <Col xs={17}>
-                  <div className="detailInfo">{user[0]?.code}</div>
+                  <div className="detailInfo preventCopy">{user[0]?.code}</div>
                 </Col>
               </Row>
 
@@ -196,7 +196,7 @@ export function Detail() {
               <Row style={{ margin: "15px 0 0 0" }}>
                 <Col xs={6}></Col>
                 <Col xs={10}>
-                  <QRCode size={180} value={user[0]?.code}></QRCode>
+                  <QRCode className="preventCopy" size={180} value={user[0]?.code}></QRCode>
                 </Col>
                 <Col xs={6}></Col>
               </Row>
