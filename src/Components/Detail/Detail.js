@@ -198,7 +198,7 @@ export function Detail() {
                   </>
                 }
               >
-                <Button type="primary">ĐĂNG KÝ</Button>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8Qz8qGexqDgj_LYlqbn7g9EyHgtB9_764JM15vOtcyohOuA/viewform" target="_blank"><Button type="primary">ĐĂNG KÝ</Button></a>
               </Empty>
             </>
           )
