@@ -51,16 +51,20 @@ export function Detail() {
       >
         Back
       </Button>
-      <Title level={3}>VÉ THÔNG HÀNH</Title>
-
+      <Title level={3} style={Object.assign({ margin: '25px 0 0 0'}, {padding: 0})}>
+        VÉ THÔNG HÀNH
+      </Title>
+      
       {
         //check loading state
         !loading ? (
           //if received data not empty && validate again mssv === code
           user?.length > 0 && user[0]?.mssv === code ? (
             <>
+            <p className="timestamp">{user[0]?.time}</p>
+
               {/* Name */}
-              <Row className="rowDetail">
+              <Row className="rowDetail" style={{margin: '18px 0 0 0'}}>
                 <Col xs={2}></Col>
                 <Col xs={5}>
                   <div className="detailTitle">TÊN:</div>
@@ -78,6 +82,17 @@ export function Detail() {
                 </Col>
                 <Col xs={17}>
                   <div className="detailInfo">{user[0]?.mssv}</div>
+                </Col>
+              </Row>
+
+              {/* EMAIL */}
+              <Row className="rowDetail">
+                <Col xs={2}></Col>
+                <Col xs={5}>
+                  <div className="detailTitle">EMAIL:</div>
+                </Col>
+                <Col xs={17}>
+                  <div className="detailInfo">{user[0]?.email}</div>
                 </Col>
               </Row>
 
@@ -159,7 +174,7 @@ export function Detail() {
               </Row>
 
               {/* QR CODE */}
-              <Row style={{ margin: "22px 0 0 0" }}>
+              <Row style={{ margin: "15px 0 0 0" }}>
                 <Col xs={6}></Col>
                 <Col xs={10}>
                   <QRCode size={180} value={user[0]?.code}></QRCode>
@@ -170,14 +185,26 @@ export function Detail() {
           ) : (
             <>
               {/* EMPTY */}
-              <Empty description={<><div style={{fontWeight: 600}}>{`MSSV ${code} chưa đăng ký tham gia`}</div><div style={{margin: '15px 0 15px 0'}}>Nếu bạn đã đăng ký, bạn vui lòng chờ ít phút để thông tin của mình được cập nhật lên web nhé <ToolFilled /></div></>}>
+              <Empty
+                description={
+                  <>
+                    <div
+                      style={{ fontWeight: 600 }}
+                    >{`MSSV ${code} chưa đăng ký tham gia`}</div>
+                    <div style={{ margin: "15px 0 15px 0" }}>
+                      Nếu bạn đã đăng ký, bạn vui lòng chờ ít phút để thông tin
+                      của mình được cập nhật lên web nhé <ToolFilled />
+                    </div>
+                  </>
+                }
+              >
                 <Button type="primary">ĐĂNG KÝ</Button>
               </Empty>
             </>
           )
         ) : (
           // LOADING ANIMATION
-          <Spin size="large" />
+          <Spin size="large" style={{margin: '164px 0 0 0'}} />
         )
       }
     </div>
