@@ -11,7 +11,7 @@ import {
   Spin,
   Popover,
 } from "antd";
-import { LeftOutlined, GiftFilled } from "@ant-design/icons";
+import { LeftOutlined, GiftFilled, ToolFilled } from "@ant-design/icons";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
@@ -23,7 +23,6 @@ export function Detail() {
   const code = useParams().code;
 
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(true);
 
   const doneMsg = "Đã hoàn thành";
   const notDoneMsg = "Chưa hoàn thành";
@@ -160,7 +159,7 @@ export function Detail() {
               </Row>
 
               {/* QR CODE */}
-              <Row style={{ margin: "20px 0 0 0" }}>
+              <Row style={{ margin: "22px 0 0 0" }}>
                 <Col xs={6}></Col>
                 <Col xs={10}>
                   <QRCode size={180} value={user[0]?.code}></QRCode>
@@ -171,7 +170,7 @@ export function Detail() {
           ) : (
             <>
               {/* EMPTY */}
-              <Empty description={`MSSV ${code} chưa đăng ký tham gia`}>
+              <Empty description={<><div style={{fontWeight: 600}}>{`MSSV ${code} chưa đăng ký tham gia`}</div><div style={{margin: '15px 0 15px 0'}}>Nếu bạn đã đăng ký, bạn vui lòng chờ ít phút để thông tin của mình được cập nhật lên web nhé <ToolFilled /></div></>}>
                 <Button type="primary">ĐĂNG KÝ</Button>
               </Empty>
             </>
