@@ -8,6 +8,13 @@
     top: 50%;
     transform: translateY(-50%);
 }
+.banner2 {
+    margin: 15px 0 0 0;
+    width: 50vw;
+    opacity: 0.3;
+    color: white;
+    overflow: hidden;
+  }
 
 @keyframes fade {
     from {

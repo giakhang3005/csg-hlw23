@@ -11,8 +11,15 @@ import {
   Spin,
   Popover,
   message,
+  Alert,
 } from "antd";
-import { LeftOutlined, GiftFilled, ToolFilled } from "@ant-design/icons";
+import Marquee from "react-fast-marquee";
+import {
+  LeftOutlined,
+  GiftFilled,
+  ToolFilled,
+  WarningFilled,
+} from "@ant-design/icons";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
@@ -196,7 +203,11 @@ export function Detail() {
               <Row style={{ margin: "15px 0 0 0" }}>
                 <Col xs={6}></Col>
                 <Col xs={10}>
-                  <QRCode className="preventCopy" size={180} value={user[0]?.code}></QRCode>
+                  <QRCode
+                    className="preventCopy"
+                    size={180}
+                    value={user[0]?.code}
+                  ></QRCode>
                 </Col>
                 <Col xs={6}></Col>
               </Row>
@@ -205,12 +216,13 @@ export function Detail() {
             <>
               {/* EMPTY */}
               <Empty
+              style={{margin: '15px 0 8px 0'}}
                 description={
                   <>
                     <div
                       style={{ fontWeight: 600 }}
                     >{`MSSV ${code} chưa đăng ký tham gia`}</div>
-                    <div style={{ margin: "15px 0 15px 0" }}>
+                    <div style={Object.assign({ margin: "15px 1px 15px 1px" })}>
                       Nếu bạn đã đăng ký, bạn vui lòng chờ ít phút để thông tin
                       của mình được cập nhật lên web nhé <ToolFilled />
                     </div>
@@ -231,6 +243,26 @@ export function Detail() {
           <Spin size="large" style={{ margin: "164px 0 0 0" }} />
         )
       }
+      <Alert
+        type="error"
+        icon={<WarningFilled />}
+        banner
+        className="banner"
+        message={
+          <Marquee pauseOnHover gradient={false}>
+            <span style={{ margin: "0 3px 0 3px" }}>
+              Bạn đừng bỏ lỡ{" "}
+              <b style={{ margin: "0 2px 0 2px" }}>đêm nhạc Halloween</b> sôi
+              động vào lúc{" "}
+              <b style={{ margin: "0 2px 0 2px" }}>
+                {" "}
+                18:00 tại sân trường đại học FPT
+              </b>{" "}
+              nhé ^^{" "}
+            </span>
+          </Marquee>
+        }
+      />
     </div>
   );
 }

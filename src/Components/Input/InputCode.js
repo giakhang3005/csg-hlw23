@@ -1,8 +1,9 @@
 import { React, useState } from "react";
 import "./Input.css";
 import { Input, Button, Space, Typography, message, Alert } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
+import { SearchOutlined, WarningFilled } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import Marquee from "react-fast-marquee";
 
 export function InputCode() {
   const { Title } = Typography;
@@ -20,7 +21,28 @@ export function InputCode() {
   };
   return (
     <div className="inputCodeContainer">
-      <Title style={Object.assign({ color: "white" })}>SEARCH</Title>
+      <Title
+        level={2}
+        style={Object.assign(
+          { color: "white" },
+          { margin: 0 },
+          { padding: 0 },
+          { filter: "drop-shadow(0 0 4px rgb(255, 255, 255))" }
+        )}
+      >
+        HALLOWEEN 2023
+      </Title>
+      <Title
+        level={5}
+        style={Object.assign(
+          { color: "white" },
+          { margin: "0 0 12px 0" },
+          { padding: 0 },
+          { filter: "drop-shadow(0 0 4px rgb(255, 255, 255))" }
+        )}
+      >
+        TRA CỨU THÔNG TIN
+      </Title>
       <Space.Compact
         style={Object.assign(
           { boxShadow: "0 0 10px white" },
@@ -45,7 +67,18 @@ export function InputCode() {
           style={Object.assign({ height: "43px" })}
         ></Button>
       </Space.Compact>
-
+      {/* <Marquee pauseOnHover gradient={false} className="banner2">
+        <span style={{ margin: "0 3px 0 3px" }}>
+          Bạn đừng bỏ lỡ{" "}
+          <b style={{ margin: "0 2px 0 2px" }}>đêm nhạc Halloween</b> sôi động
+          vào lúc{" "}
+          <b style={{ margin: "0 2px 0 2px" }}>
+            {" "}
+            18:00 tại sân trường đại học FPT
+          </b>{" "}
+          nhé ^^{" "}
+        </span>
+      </Marquee> */}
       {/* Error message */}
       {err && (
         <Alert
