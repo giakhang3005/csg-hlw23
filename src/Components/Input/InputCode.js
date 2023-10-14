@@ -3,7 +3,6 @@ import "./Input.css";
 import { Input, Button, Space, Typography, message, Alert } from "antd";
 import { SearchOutlined, WarningFilled } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import Marquee from "react-fast-marquee";
 
 export function InputCode() {
   const { Title } = Typography;
