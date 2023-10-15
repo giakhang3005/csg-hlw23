@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import "./Detail.css";
 import {
   Row,
@@ -30,7 +30,8 @@ export function Detail() {
   const { Title } = Typography;
   const code = useParams().code;
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState([]);
 
   //Message
   const doneMsg = "Đã hoàn thành";
@@ -48,21 +49,16 @@ export function Detail() {
 
   //Getting users data
   const fetchingData = () => {
-    return axios // https://sheet.best/api/sheets/363b6a6f-20ca-4299-b4d2-b6c67ba11958/search?mssv=
+    setLoading(true);
+    axios // https://sheet.best/api/sheets/363b6a6f-20ca-4299-b4d2-b6c67ba11958/search?mssv=
       .get(`https://sheetdb.io/api/v1/5ns7w9461kjnd/search?mssv=${code}`)
-      .then((response) => response.data)
-      .catch()
-      .finally(setTimeout(() => setLoading(false), 1500));
+      .then((response) => (setUser(response.data), setLoading(false)))
+      .catch((err) => console.log(err));
   };
 
-  //Use query
-  const {
-    data: user, //assign name for the data
-    refetch,
-  } = useQuery(["u"], () => {
-    //validate the path if user trying to edit it
-    return code.length < 8 ? rejectFetching() : fetchingData();
-  });
+  useEffect(() => {
+    code.length < 8 ? rejectFetching() : fetchingData();
+  }, []);
 
   return (
     <div className="DetailContainer">
@@ -216,7 +212,7 @@ export function Detail() {
             <>
               {/* EMPTY */}
               <Empty
-              style={{margin: '15px 0 8px 0'}}
+                style={{ margin: "15px 0 8px 0" }}
                 description={
                   <>
                     <div
@@ -249,7 +245,12 @@ export function Detail() {
         banner
         className="banner"
         message={
-          <Marquee pauseOnHover gradient={false} className="runnerText" speed={25}>
+          <Marquee
+            pauseOnHover
+            gradient={false}
+            className="runnerText"
+            speed={25}
+          >
             <span style={{ margin: "0 3px 0 3px" }}>
               Bạn đừng bỏ lỡ{" "}
               <b style={{ margin: "0 2px 0 2px" }}>đêm nhạc Halloween</b> sôi
