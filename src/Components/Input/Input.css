@@ -28,6 +28,24 @@
 .joinText a:hover {
     color: #ffbebb;
 }
+.movedown {
+    margin: 50px 0 0 0;
+    transition: all 0.17s ease-out;
+}
+.FadeDown {
+    animation: fadeDown 0.18s ease-out;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        margin-top: -20px;
+      }
+      to {
+        opacity: 1;
+        margin-top: 5px;
+      }
+}
 
 @keyframes fade {
   from {

@@ -67,15 +67,10 @@ export function InputCode() {
         ></Button>
       </Space.Compact>
       {/* Error message */}
-      <div className="joinText">
-        Bạn chưa đăng ký tham gia?{" "}
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8Qz8qGexqDgj_LYlqbn7g9EyHgtB9_764JM15vOtcyohOuA/viewform" target="_blank">
-          Đăng ký
-        </a>
-      </div>
       {err && (
         <Alert
           showIcon
+          className="FadeDown"
           message="MSSV phải có ít nhất 8 kí tự"
           type="error"
           style={Object.assign(
@@ -87,6 +82,12 @@ export function InputCode() {
           )}
         ></Alert>
       )}
+      <div className={`joinText ${err ? "movedown" : ""}`}>
+        Bạn chưa đăng ký tham gia?{" "}
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8Qz8qGexqDgj_LYlqbn7g9EyHgtB9_764JM15vOtcyohOuA/viewform" target="_blank">
+          Đăng ký
+        </a>
+      </div>
     </div>
   );
 }
