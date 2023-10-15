@@ -15,6 +15,12 @@
   animation: fade 0.75s ease-in-out
 }
 
+.DkButton {
+  position: absolute;
+  top: 10px;
+  right: 3%
+}
+
 @media only screen and (max-width: 500px) {
     .logo {
         top: 7px;

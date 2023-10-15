@@ -66,19 +66,13 @@ export function InputCode() {
           style={Object.assign({ height: "43px" })}
         ></Button>
       </Space.Compact>
-      {/* <Marquee pauseOnHover gradient={false} className="banner2">
-        <span style={{ margin: "0 3px 0 3px" }}>
-          Bạn đừng bỏ lỡ{" "}
-          <b style={{ margin: "0 2px 0 2px" }}>đêm nhạc Halloween</b> sôi động
-          vào lúc{" "}
-          <b style={{ margin: "0 2px 0 2px" }}>
-            {" "}
-            18:00 tại sân trường đại học FPT
-          </b>{" "}
-          nhé ^^{" "}
-        </span>
-      </Marquee> */}
       {/* Error message */}
+      <div className="joinText">
+        Bạn chưa đăng ký tham gia?{" "}
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8Qz8qGexqDgj_LYlqbn7g9EyHgtB9_764JM15vOtcyohOuA/viewform" target="_blank">
+          Đăng ký
+        </a>
+      </div>
       {err && (
         <Alert
           showIcon
