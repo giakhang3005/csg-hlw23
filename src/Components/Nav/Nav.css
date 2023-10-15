@@ -4,7 +4,8 @@
   left: calc(105px + 35px);
   height: 66px;
   filter: drop-shadow(0 0 4px rgb(255, 255, 255));
-  animation: fade 0.5s ease-in-out
+  animation: fade 0.5s ease-in-out;
+  margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 .fpt {
   position: absolute;
@@ -12,7 +13,8 @@
   left: 18px;
   height: 54px;
   filter: drop-shadow(0 0 4px rgb(255, 192, 109));
-  animation: fade 0.75s ease-in-out
+  animation: fade 0.75s ease-in-out;
+  margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 
@@ -21,12 +23,10 @@
         top: 7px;
         height: 44px;
         left: 80px;
-        margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     }
     .fpt {
         height: 34px;
         left: 5px;
-        margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     }
 }
 
