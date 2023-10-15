@@ -249,7 +249,7 @@ export function Detail() {
         banner
         className="banner"
         message={
-          <Marquee pauseOnHover gradient={false} className="runnerText">
+          <Marquee pauseOnHover gradient={false} className="runnerText" speed={25}>
             <span style={{ margin: "0 3px 0 3px" }}>
               Bạn đừng bỏ lỡ{" "}
               <b style={{ margin: "0 2px 0 2px" }}>đêm nhạc Halloween</b> sôi
