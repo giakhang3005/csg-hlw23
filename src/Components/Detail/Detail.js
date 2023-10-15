@@ -21,7 +21,6 @@ import {
   WarningFilled,
 } from "@ant-design/icons";
 import { useParams, useNavigate } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 //https://sheet.best/admin
 //https://docs.google.com/spreadsheets/d/1rDO_bu_1l6A7x5eclJ2QLIdywDwqA3es3p9LAiFFFsQ/edit#gid=0
