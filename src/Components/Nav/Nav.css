@@ -21,10 +21,12 @@
         top: 7px;
         height: 44px;
         left: 80px;
+        margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     }
     .fpt {
         height: 34px;
         left: 5px;
+        margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     }
 }
 
