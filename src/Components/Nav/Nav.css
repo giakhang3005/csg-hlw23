@@ -22,6 +22,7 @@
   display: flex;
   position: absolute;
   filter: drop-shadow(0 0 3px rgb(255, 255, 255));
+  animation: fade 0.75s ease-in-out;
 }
 .NTT {
   padding: 0 10px 0 15px;
