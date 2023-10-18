@@ -85,15 +85,16 @@
     transform: translateX(-50%);
     bottom: 20px;
     width: 100%;
-    flex-wrap: wrap
+    /* overflow: hidden; */
+    animation: move 15s linear infinite;
   }
   .NTT {
-    min-width: calc(100vw/3);
+    min-width: 50vw;
     margin: 0 0 15px 0;
     padding: 0;
   }
   .DVDH {
-    min-width: 100vw;
+    min-width: 50vw;
   }
   .logoDVDH {
     height: 16px;
@@ -104,7 +105,14 @@
     height: 40px;
   }
 }
-
+@keyframes move {
+  from {
+    transform: translateX(33%);
+  }
+  to {
+    transform: translateX(-240%);
+  }
+}
 @keyframes fade {
   from {
     opacity: 0;

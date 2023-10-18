@@ -49,8 +49,8 @@ export function Detail() {
   //Getting users data
   const fetchingData = () => {
     setLoading(true);
-    axios // https://sheet.best/api/sheets/363b6a6f-20ca-4299-b4d2-b6c67ba11958/search?mssv=
-      .get(`https://sheetdb.io/api/v1/5ns7w9461kjnd/search?mssv=${code}`)
+    axios // https://sheetdb.io/api/v1/5ns7w9461kjnd/search?mssv=
+      .get(`https://sheet.best/api/sheets/363b6a6f-20ca-4299-b4d2-b6c67ba11958/search?mssv=${code}`)
       .then((response) => (setUser(response.data), setLoading(false)))
       .catch((err) => console.log(err));
   };
@@ -195,12 +195,12 @@ export function Detail() {
               </Row>
 
               {/* QR CODE */}
-              <Row style={{ margin: "7px 0 0 0" }}>
-                <Col xs={7}></Col>
-                <Col xs={9}>
+              <Row style={{ margin: "15px 0 0 0" }}>
+                <Col xs={6}></Col>
+                <Col xs={10}>
                   <QRCode
                     className="preventCopy"
-                    size={150}
+                    size={180}
                     value={user[0]?.code}
                   ></QRCode>
                 </Col>
