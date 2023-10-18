@@ -30,7 +30,7 @@ export function Nav() {
         <div className="NTT">
           <div className="titleNTT">NHÀ TÀI TRỢ ĐỒNG HÀNH</div>
           <div className="cont">
-            <img className="logoNTT" src="./assets/NTT/LOGO MRBROWN.png" />
+            <img className="logoNTT MrBrown" src="./assets/NTT/LOGO MRBROWN.png" />
           </div>
         </div>
 

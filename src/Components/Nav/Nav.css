@@ -31,7 +31,6 @@
   color: white;
   font-size: 14px;
   font-weight: 600;
-  padding: 0 0 10px 0;
   text-align: center;
 }
 .cont {
@@ -43,10 +42,17 @@
 .logoNTT {
   height: 45px;
   margin: 0 8px 0 8px;
+  padding: 10px 0 0 0;
 }
 .logoDVDH {
   height: 22px;
   margin: 5px 8px 0 8px;
+  padding: 10px 0 0 0;
+}
+.MrBrown {
+  height: 60px;
+  margin-top: 0;
+  padding-top: 0;
 }
 .DVDHContainer {
   position: relative;
@@ -92,6 +98,9 @@
   .logoDVDH {
     height: 16px;
     margin: 3px 8px 0 8px;
+  }
+  .MrBrown {
+    height: 40px;
   }
 }
 
