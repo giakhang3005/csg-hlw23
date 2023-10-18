@@ -1,33 +1,97 @@
 .logo {
   position: absolute;
   top: 8px;
-  left: calc(105px + 35px);
-  height: 66px;
+  left: calc(105px + 50px);
+  height: 80px;
   filter: drop-shadow(0 0 4px rgb(255, 255, 255));
   animation: fade 0.5s ease-in-out;
-  margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  margin: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 .fpt {
   position: absolute;
   top: 8px;
   left: 18px;
-  height: 54px;
+  height: 65px;
   filter: drop-shadow(0 0 4px rgb(255, 192, 109));
   animation: fade 0.75s ease-in-out;
-  margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  margin: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
-
-
+.LogoNTTContainer {
+  display: flex;
+  position: absolute;
+  filter: drop-shadow(0 0 3px rgb(255, 255, 255));
+}
+.NTT {
+  padding: 0 10px 0 15px;
+}
+.titleNTT {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 0 10px 0;
+  text-align: center;
+}
+.cont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logoNTT {
+  height: 45px;
+  margin: 0 8px 0 8px;
+}
+.logoDVDH {
+  height: 22px;
+  margin: 5px 8px 0 8px;
+}
+.DVDHContainer {
+  position: relative;
+  left: 0;
+}
+@media only screen and (min-width: 501px) {
+  .LogoNTTContainer {
+    right: 8px;
+    top: 12px;
+  }
+}
 @media only screen and (max-width: 500px) {
-    .logo {
-        top: 7px;
-        height: 44px;
-        left: 80px;
-    }
-    .fpt {
-        height: 34px;
-        left: 5px;
-    }
+  .logo {
+    top: 7px;
+    height: 60px;
+    left: 112px;
+  }
+  .fpt {
+    height: 48px;
+    left: 5px;
+  }
+  .logoNTT {
+    height: 30px;
+  }
+  .titleNTT {
+    font-size: 8px;
+  }
+  .LogoNTTContainer {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    width: 100%;
+    flex-wrap: wrap
+  }
+  .NTT {
+    min-width: calc(100vw/3);
+    margin: 0 0 15px 0;
+    padding: 0;
+  }
+  .DVDH {
+    min-width: 100vw;
+  }
+  .logoDVDH {
+    height: 16px;
+    margin: 3px 8px 0 8px;
+  }
 }
 
 @keyframes fade {
