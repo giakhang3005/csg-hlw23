@@ -3,7 +3,7 @@
   top: 8px;
   left: calc(105px + 50px);
   height: 80px;
-  filter: drop-shadow(0 0 4px rgb(255, 255, 255));
+  filter: drop-shadow(0 0 4px rgb(157, 60, 60));
   animation: fade 0.5s ease-in-out;
   margin: env(safe-area-inset-top) env(safe-area-inset-right)
     env(safe-area-inset-bottom) env(safe-area-inset-left);
@@ -13,7 +13,7 @@
   top: 8px;
   left: 18px;
   height: 65px;
-  filter: drop-shadow(0 0 4px rgb(255, 192, 109));
+  filter: drop-shadow(0 0 4px rgb(157, 60, 60));
   animation: fade 0.75s ease-in-out;
   margin: env(safe-area-inset-top) env(safe-area-inset-right)
     env(safe-area-inset-bottom) env(safe-area-inset-left);
@@ -21,7 +21,7 @@
 .LogoNTTContainer {
   display: flex;
   position: absolute;
-  filter: drop-shadow(0 0 3px rgb(255, 255, 255));
+  filter: drop-shadow(0 0 3px rgb(157, 60, 60));
   animation: fade 0.75s ease-in-out;
 }
 .NTT {

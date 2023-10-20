@@ -26,7 +26,7 @@ export function InputCode() {
           { color: "white" },
           { margin: 0 },
           { padding: 0 },
-          { filter: "drop-shadow(0 0 4px rgb(255, 255, 255))" }
+          // { filter: "drop-shadow(0 0 4px rgb(255, 255, 255))" }
         )}
       >
         HALLOWEEN 2023
@@ -37,14 +37,14 @@ export function InputCode() {
           { color: "white" },
           { margin: "0 0 12px 0" },
           { padding: 0 },
-          { filter: "drop-shadow(0 0 4px rgb(255, 255, 255))" }
+          // { filter: "drop-shadow(0 0 4px rgb(255, 255, 255))" }
         )}
       >
         TRA CỨU THÔNG TIN
       </Title>
       <Space.Compact
         style={Object.assign(
-          { boxShadow: "0 0 10px white" },
+          { boxShadow: "0 0 12px -1px white" },
           { width: "375px" },
           { borderRadius: "7px" }
         )}
