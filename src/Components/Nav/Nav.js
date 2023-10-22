@@ -24,7 +24,7 @@ export function Nav() {
           <div className="cont">
             <img className="logoNTT" src="./assets/NTT/LOGO HANOK.png" />
             <img className="logoNTT" src="./assets/NTT/LOGO-HAPPY-THAI-1.png" />
-            <img className="logoNTT Afprocado" src="./assets/NTT/Afprocado.png" />
+            <img className="logoNTT Afprocado" src="./assets/NTT/LOGO AFROCADO.png" />
           </div>
         </div>
 
