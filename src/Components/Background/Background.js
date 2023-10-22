@@ -25,6 +25,7 @@ export function Background() {
         </li>
         <li></li>
       </ul>
+      <img class="hlwImg" src="./assets/images/hlw1.png" />
     </>
   );
 }

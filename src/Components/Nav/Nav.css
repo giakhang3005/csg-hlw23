@@ -21,7 +21,7 @@
 .LogoNTTContainer {
   display: flex;
   position: absolute;
-  filter: drop-shadow(0 0 3px rgb(157, 60, 60));
+  filter: drop-shadow(0 0 2px #fdb95e);
   animation: fade 0.75s ease-in-out;
 }
 .NTT {

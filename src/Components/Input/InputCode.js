@@ -24,8 +24,9 @@ export function InputCode() {
         level={2}
         style={Object.assign(
           { color: "white" },
-          { margin: 0 },
+          { margin: '0 0 6px 0' },
           { padding: 0 },
+          {fontFamily: "Halloween"}
           // { filter: "drop-shadow(0 0 4px rgb(255, 255, 255))" }
         )}
       >
@@ -37,6 +38,7 @@ export function InputCode() {
           { color: "white" },
           { margin: "0 0 12px 0" },
           { padding: 0 },
+          {fontFamily: "Halloween"}
           // { filter: "drop-shadow(0 0 4px rgb(255, 255, 255))" }
         )}
       >
@@ -44,7 +46,7 @@ export function InputCode() {
       </Title>
       <Space.Compact
         style={Object.assign(
-          { boxShadow: "0 0 12px -1px white" },
+          { boxShadow: "0 0 12px -1px #ba3e03" },
           { width: "375px" },
           { borderRadius: "7px" }
         )}
@@ -53,9 +55,9 @@ export function InputCode() {
         <Input
           showCount
           maxLength={20}
-          prefix={<b>MSSV: </b>}
+          prefix={<b style={{fontFamily: "Halloween"}}>MSSV: </b>}
           placeholder="SE190001"
-          style={Object.assign({ lineHeight: "33px" }, { background: "white" })}
+          style={Object.assign({ lineHeight: "33px" }, { background: "white" }, {fontFamily: "Halloween"})}
         ></Input>
 
         {/* Search Button */}

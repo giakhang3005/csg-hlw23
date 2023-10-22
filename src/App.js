@@ -18,7 +18,7 @@ function App() {
   return (
     <QueryClientProvider client={client}>
       <BrowserRouter>
-        <ConfigProvider theme={{ token: { colorPrimary: "#f56c64" } }}>
+        <ConfigProvider theme={{ token: { colorPrimary: "#ba3e0e" } }}>
           <Nav />
           <Routes>
             <Route path="/" element={<InputCode />} />

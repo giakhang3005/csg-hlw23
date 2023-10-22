@@ -1,17 +1,24 @@
+@font-face {
+  font-family: Halloween;
+  src: url(./Fonts/Halloween.otf);
+}
+/* * {
+  font-family: Halloween, sans-serif;
+} */
+
+/* Pallete: #ba3e03, #dfb95e, #3c7415, #dcba08, #606020, #857269 */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Halloween, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
 }
 *::selection {
-  background: #5c0700;
-  color: white;
+  background: #606020;
+  color: #dcba08;
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

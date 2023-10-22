@@ -71,7 +71,7 @@ export function Detail() {
       </Button>
       <Title
         level={3}
-        style={Object.assign({ margin: "25px 0 0 0" }, { padding: 0 })}
+        style={Object.assign({ margin: "25px 0 0 0" }, { padding: 0 }, {fontFamily: "Halloween"})}
       >
         VÉ THÔNG HÀNH
       </Title>
@@ -228,7 +228,7 @@ export function Detail() {
                   href="https://docs.google.com/forms/d/e/1FAIpQLSe8Qz8qGexqDgj_LYlqbn7g9EyHgtB9_764JM15vOtcyohOuA/viewform"
                   target="_blank"
                 >
-                  <Button type="primary">ĐĂNG KÝ</Button>
+                  <Button type="primary" style={{fontFamily: "Halloween"}}>ĐĂNG KÝ</Button>
                 </a>
               </Empty>
             </>
