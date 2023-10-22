@@ -49,12 +49,12 @@
   margin: 5px 8px 0 8px;
   padding: 10px 0 0 0;
 }
-.MrBrown {
-  height: 60px;
-  margin-top: 0;
-  padding-top: 0;
+.Afprocado {
+  height: 10px;
+  margin: 0;
+  padding: 0;
 }
-@media only screen and (min-width: 501px) {
+@media only screen and (min-width: 1151px) {
   .LogoNTTContainer {
     right: 8px;
     top: 12px;
@@ -63,7 +63,7 @@
     margin: 0 0 0 10px;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1150px) {
   .logo {
     top: 7px;
     height: 60px;
@@ -88,21 +88,22 @@
     animation: move 20s linear infinite;
   }
   .NTT {
-    min-width: 40vw;
+    min-width: 180px;
     margin: 0 0 15px 0;
     padding: 0;
     margin: 0;
   }
   .DVDH {
-    min-width: 40vw;
+    min-width: 200px;
+    margin: 0 0 0 40px;
   }
   .logoDVDH {
     height: 16px;
     margin: 3px 8px 0 8px;
   }
-  .MrBrown {
-    margin: 5px 0 0 0;
-    height: 40px;
+  .Afprocado {
+    height: 6px;
+    padding: 0;
   }
 }
 @keyframes move {
@@ -110,7 +111,7 @@
     transform: translateX(35%);
   }
   to {
-    transform: translateX(-200%);
+    transform: translateX(-270%);
   }
 }
 @keyframes fade {

@@ -24,13 +24,14 @@ export function Nav() {
           <div className="cont">
             <img className="logoNTT" src="./assets/NTT/LOGO HANOK.png" />
             <img className="logoNTT" src="./assets/NTT/LOGO-HAPPY-THAI-1.png" />
+            <img className="logoNTT Afprocado" src="./assets/NTT/Afprocado.png" />
           </div>
         </div>
 
         <div className="NTT">
           <div className="titleNTT">NHÀ TÀI TRỢ ĐỒNG HÀNH</div>
           <div className="cont">
-            <img className="logoNTT MrBrown" src="./assets/NTT/LOGO MRBROWN.png" />
+            <img className="logoNTT" src="./assets/NTT/LOGO MRBROWN.png" />
           </div>
         </div>
 
@@ -38,6 +39,10 @@ export function Nav() {
           <div className="titleNTT">ĐƠN VỊ ĐỒNG HÀNH</div>
           <div className="cont">
             <img className="logoDVDH" src="./assets/DVDH/JSC.png" />
+            <img className="logoNTT" src="./assets/DVDH/FCF.jpg" />
+            <img className="logoNTT" src="./assets/DVDH/AAC.png" />
+            <img className="logoNTT" src="./assets/DVDH/EIS.png" />
+            <img className="logoNTT" src="./assets/DVDH/A.jpg" />
           </div>
         </div>
       </div>
