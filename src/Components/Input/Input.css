@@ -24,6 +24,7 @@
     color: #f56c64;
     font-weight: 600;
     transition: all 0.17s ease-in-out;
+    font-size: 10px;
 }
 .joinText a:hover {
     color: #ffbebb;
