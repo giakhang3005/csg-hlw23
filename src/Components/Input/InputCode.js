@@ -24,7 +24,7 @@ export function InputCode() {
         level={2}
         style={Object.assign(
           { color: "white" },
-          { margin: '0 0 6px 0' },
+          { margin: '0 0 8px 0' },
           { padding: 0 },
           {fontFamily: "Halloween"}
           // { filter: "drop-shadow(0 0 4px rgb(255, 255, 255))" }
@@ -36,7 +36,7 @@ export function InputCode() {
         level={5}
         style={Object.assign(
           { color: "white" },
-          { margin: "0 0 12px 0" },
+          { margin: "0 0 15px 0" },
           { padding: 0 },
           {fontFamily: "Halloween"}
           // { filter: "drop-shadow(0 0 4px rgb(255, 255, 255))" }

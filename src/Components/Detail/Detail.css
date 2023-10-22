@@ -84,6 +84,7 @@
   left: 4px;
   top: 2px;
   padding: 2px;
+  z-index: 1;
 }
 .timestamp {
   margin: 5px 0 0 0;
