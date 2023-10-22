@@ -5,11 +5,69 @@
   transform: translate(-50%, -50%);
   width: 350px;
   height: 530px;
-  background-color: rgb(215, 214, 214);
+  background: rgb(215, 214, 214);
   border-radius: 12px;
   box-shadow: 0 0 15px white;
   text-align: center;
   overflow: hidden;
+  filter: brightness(100%);
+  /* animation: stormCont 3s linear infinite; */
+}
+@keyframes stormCont {
+  0% {
+      filter: brightness(100%);
+  }
+  10% {
+      filter: brightness(100%);
+  }
+  11% {
+      filter: brightness(50%);
+  }
+  12% {
+      filter: brightness(100%);
+  }
+  /* 13% {
+      filter: brightness(70%);
+  }
+  14% {
+      filter: brightness(50%);
+  } */
+  60% {
+      filter: brightness(100%);
+  }
+  61% {
+      filter: brightness(50%);
+  }
+  62% {
+      filter: brightness(100%);
+  }
+  63% {
+      filter: brightness(100%);
+  }
+  68% {
+      filter: brightness(50%);
+  }
+  69% {
+      filter: brightness(100%);
+  }
+  90% {
+      filter: brightness(100%);
+  }
+  91% {
+      filter: brightness(50%);
+  }
+  92% {
+      filter: brightness(100%);
+  }
+  93% {
+      filter: brightness(50%);
+  }
+  94% {
+      filter: brightness(100%);
+  }
+  100% {
+      filter: brightness(100%);
+  }
 }
 .detailTitle {
   font-weight: 500;
@@ -39,10 +97,11 @@
   bottom: 0;
 }
 .runnerText {
-  font-size: 10px
+  font-size: 10px;
 }
 @media only screen and (max-width: 600px) {
   .runnerText {
-    font-size: 8.5px
+    font-size: 8.5px;
   }
 }
+

@@ -107,7 +107,64 @@
     transform: translate(-50%, -50%);
     height: 100%;
     opacity: 0.15;
-    z-index: -1;
+    z-index: 1;
+    animation: stormImg 3s linear infinite;
+}
+@keyframes stormImg {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    11% {
+        opacity: 0.17;
+    }
+    12% {
+        opacity: 0;
+    }
+    /* 13% {
+        filter: brightness(70%);
+    }
+    14% {
+        filter: brightness(50%);
+    } */
+    60% {
+        opacity: 0;
+    }
+    61% {
+        opacity: 0.17;
+    }
+    62% {
+        opacity: 0;
+    }
+    63% {
+        opacity: 0;
+    }
+    68% {
+        opacity: 0.17;
+    }
+    69% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 0;
+    }
+    91% {
+        opacity: 0.17;
+    }
+    92% {
+        opacity: 0;
+    }
+    93% {
+        opacity: 0.17;
+    }
+    94% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 .background li {
   position: absolute;
