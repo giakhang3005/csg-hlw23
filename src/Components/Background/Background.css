@@ -84,10 +84,10 @@
   92% {
     filter: brightness(50%);
   }
-  93% {
+  94% {
     filter: brightness(70%);
   }
-  94% {
+  96% {
     filter: brightness(50%);
   }
   100% {
@@ -144,12 +144,12 @@
   92% {
     opacity: 0;
   }
-  93% {
+  95% {
     opacity: 0.25;
   }
-  94% {
+  /* 98% {
     opacity: 0;
-  }
+  } */
   100% {
     opacity: 0;
   }
