@@ -1,49 +1,48 @@
 import React from "react";
 import "./Nav.css";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Button, Typography } from "antd";
 
 export function Nav() {
   const { Title } = Typography;
   return (
     <>
-      <LazyLoadImage effect="blur" className="fpt" src="./assets/logofpt.png" />
+      <img className="fpt" src="./assets/logofpt.png" />
       <a href="https://www.facebook.com/cocsaigonfuhcm" target="_blank">
-        <LazyLoadImage effect="blur" className="logo" src="./assets/logowhite.png" />
+        <img className="logo" src="./assets/logowhite.png" />
       </a>
 
       <div className="LogoNTTContainer">
         <div className="NTT">
           <div className="titleNTT">NHÀ TÀI TRỢ BẠC</div>
           <div className="cont">
-            <LazyLoadImage effect="blur" className="logoNTT" src="./assets/NTT/Logo_Chill-01.png" loading="lazy" />
+            <img className="logoNTT" src="./assets/NTT/Logo_Chill-01.png" alt="Chill Cocktail"/>
           </div>
         </div>
 
         <div className="NTT">
           <div className="titleNTT">NHÀ TÀI TRỢ ĐỒNG</div>
           <div className="cont">
-            <LazyLoadImage effect="blur" className="logoNTT" src="./assets/NTT/LOGO HANOK.png" />
-            <LazyLoadImage effect="blur" className="logoNTT" src="./assets/NTT/LOGO-HAPPY-THAI-1.png" />
-            <LazyLoadImage effect="blur" className="logoNTT Afprocado" src="./assets/NTT/LOGO AFROCADO.png" />
+            <img className="logoNTT" src="./assets/NTT/LOGO HANOK.png" alt="Hanok"/>
+            <img className="logoNTT" src="./assets/NTT/LOGO-HAPPY-THAI-1.png" alt="Happy Thai"/>
+            <img className="logoNTT Afprocado" src="./assets/NTT/LOGO AFROCADO.png" alt="AFprocado"/>
           </div>
         </div>
 
         <div className="NTT">
           <div className="titleNTT">NHÀ TÀI TRỢ ĐỒNG HÀNH</div>
           <div className="cont">
-            <LazyLoadImage effect="blur" className="logoNTT" src="./assets/NTT/LOGO MRBROWN.png" />
+            <img className="logoNTT" src="./assets/NTT/LOGO MRBROWN.png" alt="Mr Brown"/>
           </div>
         </div>
 
         <div className="DVDH">
           <div className="titleNTT">ĐƠN VỊ ĐỒNG HÀNH</div>
           <div className="cont">
-            <LazyLoadImage effect="blur" className="logoDVDH" src="./assets/DVDH/JSC.png" />
-            <LazyLoadImage effect="blur" className="logoNTT" src="./assets/DVDH/FCF.jpg" />
-            <LazyLoadImage effect="blur" className="logoNTT" src="./assets/DVDH/AAC.png" />
-            <LazyLoadImage effect="blur" className="logoNTT" src="./assets/DVDH/EIS.png" />
-            <LazyLoadImage effect="blur" className="logoNTT" src="./assets/DVDH/A.jpg" />
+            <img className="logoDVDH" src="./assets/DVDH/JSC.png" alt="JSV"/>
+            <img className="logoNTT" src="./assets/DVDH/FCF.jpg" alt="FCF"/>
+            <img className="logoNTT" src="./assets/DVDH/AAC.png" alt="AAC"/>
+            <img className="logoNTT" src="./assets/DVDH/EIS.png" alt="EIS"/>
+            <img className="logoNTT" src="./assets/DVDH/A.jpg" alt="A"/>
           </div>
         </div>
       </div>
