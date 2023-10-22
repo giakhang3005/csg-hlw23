@@ -5,24 +5,16 @@ export function Background() {
     <>
       <ul className="background">
         <li></li>
-        <li>
-          <img className="logocsg" src="./assets/logowhite.png" />
-        </li>
         <li></li>
         <li></li>
         <li></li>
-        <li>
-          <img className="logocsg" src="./assets/logowhite.png" />
-        </li>
-        <li></li>
-        <li>
-          <img className="logocsg" src="./assets/logowhite.png" />
-        </li>
         <li></li>
         <li></li>
-        <li>
-          <img className="logocsg" src="./assets/logowhite.png" />
-        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
         <li></li>
       </ul>
       <img class="hlwImg" src="./assets/images/hlw1.png" />
