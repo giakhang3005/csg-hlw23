@@ -85,7 +85,7 @@
     bottom: 0;
     width: 100%;
     /* overflow: hidden; */
-    animation: move 25s linear infinite;
+    animation: move 28s linear infinite;
   }
   .NTT {
     min-width: 180px;
