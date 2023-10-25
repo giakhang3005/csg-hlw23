@@ -117,7 +117,7 @@
     transform: translateX(35%);
   }
   to {
-    transform: translateX(-270%);
+    transform: translateX(-300%);
   }
 }
 @keyframes fade {
