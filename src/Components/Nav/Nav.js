@@ -16,14 +16,13 @@ export function Nav() {
           <div className="titleNTT">NHÀ TÀI TRỢ BẠC</div>
           <div className="cont">
             <img className="logoNTT" src="./assets/NTT/Logo_Chill-01.png" alt="Chill Cocktail"/>
+            <img className="logoNTT" src="./assets/NTT/soso.png" alt="Soso"/>
           </div>
         </div>
 
         <div className="NTT">
           <div className="titleNTT">NHÀ TÀI TRỢ ĐỒNG</div>
           <div className="cont">
-            <img className="logoNTT" src="./assets/NTT/LOGO HANOK.png" alt="Hanok"/>
-            <img className="logoNTT" src="./assets/NTT/LOGO-HAPPY-THAI-1.png" alt="Happy Thai"/>
             <img className="logoNTT Afprocado" src="./assets/NTT/LOGO AFROCADO.png" alt="AFprocado"/>
           </div>
         </div>
@@ -31,7 +30,10 @@ export function Nav() {
         <div className="NTT">
           <div className="titleNTT">NHÀ TÀI TRỢ ĐỒNG HÀNH</div>
           <div className="cont">
+          <img className="logoNTT" src="./assets/NTT/LOGO HANOK.png" alt="Hanok"/>
+            <img className="logoNTT" src="./assets/NTT/LOGO-HAPPY-THAI-1.png" alt="Happy Thai"/>
             <img className="logoNTT" src="./assets/NTT/LOGO MRBROWN.png" alt="Mr Brown"/>
+            <img className="logoNTT" src="./assets/NTT/misslua.png" alt="Misslua Makeup"/>
           </div>
         </div>
 
@@ -43,6 +45,7 @@ export function Nav() {
             <img className="logoNTT" src="./assets/DVDH/AAC.png" alt="AAC"/>
             <img className="logoNTT" src="./assets/DVDH/EIS.png" alt="EIS"/>
             <img className="logoNTT" src="./assets/DVDH/A.jpg" alt="A"/>
+            <img className="logoNTT" src="./assets/DVDH/IG.png" alt="IG"/>
           </div>
         </div>
       </div>

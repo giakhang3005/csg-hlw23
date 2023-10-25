@@ -25,7 +25,7 @@
   animation: fade 0.75s ease-in-out;
 }
 .NTT {
-  padding: 0 10px 0 15px;
+  padding: 0 10px 0 20px;
 }
 .titleNTT {
   color: white;
@@ -50,8 +50,8 @@
   padding: 10px 0 0 0;
 }
 .Afprocado {
+  margin: 15px 0 0 0;
   height: 10px;
-  margin: 0;
   padding: 0;
 }
 @media only screen and (min-width: 1151px) {
@@ -85,13 +85,19 @@
     bottom: 0;
     width: 100%;
     /* overflow: hidden; */
-    animation: move 28s linear infinite;
+    animation: move 25s linear infinite;
   }
   .NTT {
     min-width: 180px;
     margin: 0 0 15px 0;
     padding: 0;
     margin: 0;
+  }
+  .NTT:nth-child(2) {
+    margin: 0 60px 0 30px;
+  }
+  .NTT:nth-child(3) {
+    margin: 0 60px 0 0;
   }
   .DVDH {
     min-width: 200px;
