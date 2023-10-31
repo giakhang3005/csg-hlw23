@@ -65,7 +65,7 @@ export function Detail() {
     .month(9)
     .year(2023)
     .hour(20)
-    .minute(00)
+    .minute(0)
     .second(0);
   const [isShowing, setIsShowing] = useState(true);
   const checkTime = () => {
