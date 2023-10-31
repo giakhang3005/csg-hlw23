@@ -301,7 +301,7 @@ export function Detail() {
             speed={25}
           >
             {isShowing ? (
-              <span>Bạn cảm thấy hoạt động hôm nay như thế nào? Hãy cho Cóc Sài Gòn biết bằng cách <a href="https://docs.google.com/forms/d/e/1FAIpQLSeaUFMuKt4hL58wGuk7NwGzaLapYBjl-l8dsu11biezq6XWQA/viewform?fbclid=IwAR02HeunMEE8w65eVgbMBX1WjFVqyEMEuAPtH_jPylfavyF6fFxtK-D5qT4" target="_blank"><b>FEEDBACK</b></a> nhé</span>
+              <span>Bạn cảm thấy hoạt động hôm nay như thế nào? Hãy cho Cóc Sài Gòn biết bằng cách <a href="https://docs.google.com/forms/d/e/1FAIpQLSeaUFMuKt4hL58wGuk7NwGzaLapYBjl-l8dsu11biezq6XWQA/viewform?fbclid=IwAR02HeunMEE8w65eVgbMBX1WjFVqyEMEuAPtH_jPylfavyF6fFxtK-D5qT4" target="_blank" style={{margin: '0 5px 0 0'}}><b>FEEDBACK</b></a> nhé</span>
             ) : (
               <span style={{ margin: "0 3px 0 3px" }}>
                 Các booth game sẽ đóng vào lúc
