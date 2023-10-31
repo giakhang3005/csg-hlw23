@@ -60,12 +60,12 @@ export function Detail() {
       .catch((err) => console.log(err));
   };
 
-  //close time 31/10/2023 20:00:00
+  //close time 31/10/2023 19:00:00
   const limitTime = new dayjs()
     .date(31)
     .month(9)
     .year(2023)
-    .hour(20)
+    .hour(19)
     .minute(0)
     .second(0);
   const [isShowing, setIsShowing] = useState(true);

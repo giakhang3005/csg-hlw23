@@ -17,6 +17,7 @@ export function InputCode() {
 
     navigate(`/${input}`);
   };
+
   return (
     <div className="inputCodeContainer">
       <Title
