@@ -50,6 +50,7 @@ export function Detail() {
   //Getting users data
   const fetchingData = () => {
     setLoading(true);
+    //https://sheet.best/api/sheets/18ed97da-39f2-4c51-8efd-f16853cff5f9/search?mssv=
     axios // https://sheetdb.io/api/v1/5ns7w9461kjnd/search?mssv=
       .get(
         `https://sheet.best/api/sheets/363b6a6f-20ca-4299-b4d2-b6c67ba11958/search?mssv=${code}`
@@ -58,13 +59,13 @@ export function Detail() {
       .catch((err) => console.log(err));
   };
 
-  //close time 31/10/2023 19:30:00
+  //close time 31/10/2023 20:00:00
   const limitTime = new dayjs()
     .date(31)
     .month(9)
     .year(2023)
-    .hour(19)
-    .minute(30)
+    .hour(20)
+    .minute(00)
     .second(0);
   const [isShowing, setIsShowing] = useState(true);
   const checkTime = () => {
