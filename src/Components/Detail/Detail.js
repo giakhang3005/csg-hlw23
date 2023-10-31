@@ -78,7 +78,7 @@ export function Detail() {
   };
 
   useEffect(() => {
-    code.length < 6 ? rejectFetching() : fetchingData();
+    fetchingData();
     checkTime();
   }, []);
 

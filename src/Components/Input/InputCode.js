@@ -15,8 +15,7 @@ export function InputCode() {
     //Get input value
     const input = document.querySelector("input").value.toUpperCase();
 
-    // Length must >= 6
-    input.length < 6 ? setErr(true) : navigate(`/${input}`);
+    navigate(`/${input}`);
   };
   return (
     <div className="inputCodeContainer">
