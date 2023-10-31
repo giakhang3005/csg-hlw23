@@ -147,7 +147,7 @@ export function Detail() {
               </Row>
 
               {/* HLW CODE */}
-              <Row className="rowDetail">
+              {isShowing && <Row className="rowDetail">
                 <Col xs={2}></Col>
                 <Col xs={5}>
                   <div className="detailTitle">CODE:</div>
@@ -155,7 +155,7 @@ export function Detail() {
                 <Col xs={17}>
                   <div className="detailInfo">{user[0]?.code}</div>
                 </Col>
-              </Row>
+              </Row>}
 
               {/* TRACK STATUS */}
               <Row className="rowDetail">
