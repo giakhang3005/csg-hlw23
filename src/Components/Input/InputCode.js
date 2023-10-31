@@ -15,8 +15,8 @@ export function InputCode() {
     //Get input value
     const input = document.querySelector("input").value.toUpperCase();
 
-    // Length must >= 8
-    input.length < 8 ? setErr(true) : navigate(`/${input}`);
+    // Length must >= 6
+    input.length < 6 ? setErr(true) : navigate(`/${input}`);
   };
   return (
     <div className="inputCodeContainer">
@@ -73,7 +73,7 @@ export function InputCode() {
         <Alert
           showIcon
           className="FadeDown"
-          message="MSSV phải có ít nhất 8 kí tự"
+          message="MSSV phải có ít nhất 6 kí tự"
           type="error"
           style={Object.assign(
             { width: "375px" },

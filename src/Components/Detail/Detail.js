@@ -44,7 +44,7 @@ export function Detail() {
 
   //reject the requests if user tried to enter by edit the website path
   const rejectFetching = () => {
-    message.error("MSSV phải có ít nhất 8 kí tự");
+    message.error("MSSV phải có ít nhất 6 kí tự");
     navigate("/");
   };
 
@@ -78,7 +78,7 @@ export function Detail() {
   };
 
   useEffect(() => {
-    code.length < 8 ? rejectFetching() : fetchingData();
+    code.length < 6 ? rejectFetching() : fetchingData();
     checkTime();
   }, []);
 
