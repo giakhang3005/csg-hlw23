@@ -297,14 +297,14 @@ export function Detail() {
             speed={25}
           >
             <span style={{ margin: "0 3px 0 3px" }}>
-              Bạn đừng bỏ lỡ{" "}
-              <b style={{ margin: "0 2px 0 2px" }}>đêm nhạc Halloween</b> sôi
-              động vào lúc{" "}
+              Các booth game sẽ đóng vào lúc 
+              <b style={{ margin: "0 2px 0 2px" }}>19:00</b> 
+              Nhưng các bạn vẫn có thể vào để
               <b style={{ margin: "0 2px 0 2px" }}>
                 {" "}
-                18:00 tại sân trường đại học FPT
+                tham quan booth
               </b>{" "}
-              nhé ^^{" "}
+              ^^
             </span>
           </Marquee>
         }
