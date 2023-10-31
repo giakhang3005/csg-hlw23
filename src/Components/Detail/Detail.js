@@ -224,7 +224,7 @@ export function Detail() {
               </Row>
 
               {/* QR CODE */}
-              <Row style={{ margin: "4px 0 0 0" }}>
+              <Row style={{ margin: "4px 0 2px 0" }}>
                 {isShowing ? (
                   <>
                     <Col xs={6}></Col>
