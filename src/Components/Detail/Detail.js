@@ -92,9 +92,9 @@ export function Detail() {
         >
           Back
         </Button>
-        <Button type="text" icon={<ReloadOutlined />} onClick={fetchingData}>
+        {/* <Button type="text" icon={<ReloadOutlined />} onClick={fetchingData}>
           Refresh
-        </Button>
+        </Button> */}
       </span>
       <Title
         level={3}
