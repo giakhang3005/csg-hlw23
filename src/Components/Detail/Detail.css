@@ -4,7 +4,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 350px;
-  height: 530px;
+  height: 520px;
   background: rgb(215, 214, 214);
   border-radius: 12px;
   box-shadow: 0 0 15px white;
@@ -51,9 +51,12 @@
 }
 .back {
   position: absolute;
-  left: 4px;
-  top: 2px;
-  padding: 2px;
+  width: 103%;
+  display: flex;
+  justify-content: space-between;
+  left: -5px;
+  top: 0px;
+  /* padding: 2px; */
   z-index: 1;
 }
 .timestamp {

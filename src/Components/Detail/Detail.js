@@ -19,6 +19,7 @@ import {
   GiftFilled,
   ToolFilled,
   WarningFilled,
+  ReloadOutlined
 } from "@ant-design/icons";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -83,18 +84,20 @@ export function Detail() {
 
   return (
     <div className="DetailContainer">
-      <Button
-        className="back"
-        type="text"
-        icon={<LeftOutlined />}
-        onClick={() => navigate("/")}
-      >
-        Back
-      </Button>
+      <span className="back">
+        <Button
+          type="text"
+          icon={<LeftOutlined />}
+          onClick={() => navigate("/")}
+        >
+          Back
+        </Button>
+        <Button type="text" icon={<ReloadOutlined />} onClick={fetchingData}>Refresh</Button>
+      </span>
       <Title
         level={3}
         style={Object.assign(
-          { margin: "25px 0 0 0" },
+          { margin: "30px 0 0 0" },
           { padding: 0 },
           { fontFamily: "Halloween" }
         )}
@@ -221,7 +224,7 @@ export function Detail() {
               </Row>
 
               {/* QR CODE */}
-              <Row style={{ margin: "10px 0 0 0" }}>
+              <Row style={{ margin: "4px 0 0 0" }}>
                 {isShowing ? (
                   <>
                     <Col xs={6}></Col>
@@ -238,7 +241,7 @@ export function Detail() {
                   <Alert
                     style={Object.assign(
                       { width: " 100%" },
-                      { margin: "10px 5px 0 5px" },
+                      { margin: "10px 5px 0 5px" }
                     )}
                     type="error"
                     message={<b>CÁC BOOTH GAME ĐÃ ĐÓNG</b>}
