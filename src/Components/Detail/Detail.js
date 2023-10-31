@@ -22,6 +22,7 @@ import {
 } from "@ant-design/icons";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import dayjs from "dayjs";
 //https://sheet.best/admin
 //https://docs.google.com/spreadsheets/d/1rDO_bu_1l6A7x5eclJ2QLIdywDwqA3es3p9LAiFFFsQ/edit#gid=0
 
@@ -50,13 +51,33 @@ export function Detail() {
   const fetchingData = () => {
     setLoading(true);
     axios // https://sheetdb.io/api/v1/5ns7w9461kjnd/search?mssv=
-      .get(`https://sheet.best/api/sheets/363b6a6f-20ca-4299-b4d2-b6c67ba11958/search?mssv=${code}`)
+      .get(
+        `https://sheet.best/api/sheets/363b6a6f-20ca-4299-b4d2-b6c67ba11958/search?mssv=${code}`
+      )
       .then((response) => (setUser(response.data), setLoading(false)))
       .catch((err) => console.log(err));
   };
 
+  //close time 31/10/2023 19:30:00
+  const limitTime = new dayjs()
+    .date(31)
+    .month(9)
+    .year(2023)
+    .hour(19)
+    .minute(30)
+    .second(0);
+  const [isShowing, setIsShowing] = useState(true);
+  const checkTime = () => {
+    setInterval(() => {
+      const now = new dayjs();
+      now >= limitTime && setIsShowing(false);
+    }, 1000 * 60 * 3);
+    //inter val every 3 minutes
+  };
+
   useEffect(() => {
     code.length < 8 ? rejectFetching() : fetchingData();
+    checkTime();
   }, []);
 
   return (
@@ -71,7 +92,11 @@ export function Detail() {
       </Button>
       <Title
         level={3}
-        style={Object.assign({ margin: "25px 0 0 0" }, { padding: 0 }, {fontFamily: "Halloween"})}
+        style={Object.assign(
+          { margin: "25px 0 0 0" },
+          { padding: 0 },
+          { fontFamily: "Halloween" }
+        )}
       >
         VÉ THÔNG HÀNH
       </Title>
@@ -196,15 +221,30 @@ export function Detail() {
 
               {/* QR CODE */}
               <Row style={{ margin: "10px 0 0 0" }}>
-                <Col xs={6}></Col>
-                <Col xs={10}>
-                  <QRCode
-                    className="preventCopy"
-                    size={180}
-                    value={user[0]?.code}
-                  ></QRCode>
-                </Col>
-                <Col xs={6}></Col>
+                {isShowing ? (
+                  <>
+                    <Col xs={6}></Col>
+                    <Col xs={10}>
+                      <QRCode
+                        className="preventCopy"
+                        size={180}
+                        value={user[0]?.code}
+                      ></QRCode>
+                    </Col>
+                    <Col xs={6}></Col>{" "}
+                  </>
+                ) : (
+                  <Alert
+                    style={Object.assign(
+                      { width: " 100%" },
+                      { margin: "10px 5px 0 5px" },
+                    )}
+                    type="error"
+                    message={<b>CÁC BOOTH GAME ĐÃ ĐÓNG</b>}
+                    description="Các bạn vui lòng tập
+                    trung tại sân khấu để cùng chào đón các tiết mục vô cùng đặc sắc nhé ^^"
+                  ></Alert>
+                )}
               </Row>
             </>
           ) : (
@@ -228,7 +268,9 @@ export function Detail() {
                   href="https://docs.google.com/forms/d/e/1FAIpQLSe8Qz8qGexqDgj_LYlqbn7g9EyHgtB9_764JM15vOtcyohOuA/viewform"
                   target="_blank"
                 >
-                  <Button type="primary" style={{fontFamily: "Halloween"}}>ĐĂNG KÝ</Button>
+                  <Button type="primary" style={{ fontFamily: "Halloween" }}>
+                    ĐĂNG KÝ
+                  </Button>
                 </a>
               </Empty>
             </>
