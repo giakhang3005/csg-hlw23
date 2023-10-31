@@ -19,7 +19,7 @@ import {
   GiftFilled,
   ToolFilled,
   WarningFilled,
-  ReloadOutlined
+  ReloadOutlined,
 } from "@ant-design/icons";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -92,7 +92,9 @@ export function Detail() {
         >
           Back
         </Button>
-        <Button type="text" icon={<ReloadOutlined />} onClick={fetchingData}>Refresh</Button>
+        <Button type="text" icon={<ReloadOutlined />} onClick={fetchingData}>
+          Refresh
+        </Button>
       </span>
       <Title
         level={3}
@@ -147,15 +149,17 @@ export function Detail() {
               </Row>
 
               {/* HLW CODE */}
-              {isShowing && <Row className="rowDetail">
-                <Col xs={2}></Col>
-                <Col xs={5}>
-                  <div className="detailTitle">CODE:</div>
-                </Col>
-                <Col xs={17}>
-                  <div className="detailInfo">{user[0]?.code}</div>
-                </Col>
-              </Row>}
+              {isShowing && (
+                <Row className="rowDetail">
+                  <Col xs={2}></Col>
+                  <Col xs={5}>
+                    <div className="detailTitle">CODE:</div>
+                  </Col>
+                  <Col xs={17}>
+                    <div className="detailInfo">{user[0]?.code}</div>
+                  </Col>
+                </Row>
+              )}
 
               {/* TRACK STATUS */}
               <Row className="rowDetail">
@@ -296,16 +300,16 @@ export function Detail() {
             className="runnerText"
             speed={25}
           >
-            <span style={{ margin: "0 3px 0 3px" }}>
-              Các booth game sẽ đóng vào lúc 
-              <b style={{ margin: "0 2px 0 2px" }}>19:00</b> 
-              Nhưng các bạn vẫn có thể vào để
-              <b style={{ margin: "0 2px 0 2px" }}>
-                {" "}
-                tham quan booth
-              </b>{" "}
-              ^^
-            </span>
+            {isShowing ? (
+              <span>Bạn cảm thấy hoạt động hôm nay như thế nào? Hãy cho Cóc Sài Gòn biết bằng cách <a href="https://docs.google.com/forms/d/e/1FAIpQLSeaUFMuKt4hL58wGuk7NwGzaLapYBjl-l8dsu11biezq6XWQA/viewform?fbclid=IwAR02HeunMEE8w65eVgbMBX1WjFVqyEMEuAPtH_jPylfavyF6fFxtK-D5qT4" target="_blank"><b>FEEDBACK</b></a> nhé</span>
+            ) : (
+              <span style={{ margin: "0 3px 0 3px" }}>
+                Các booth game sẽ đóng vào lúc
+                <b style={{ margin: "0 2px 0 2px" }}>19:00</b>
+                Nhưng các bạn vẫn có thể vào để
+                <b style={{ margin: "0 2px 0 2px" }}> tham quan booth</b> ^^
+              </span>
+            )}
           </Marquee>
         }
       />
