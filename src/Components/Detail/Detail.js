@@ -61,25 +61,25 @@ export function Detail() {
   };
 
   //close time 31/10/2023 19:00:00
-  const limitTime = new dayjs()
-    .date(31)
-    .month(9)
-    .year(2023)
-    .hour(19)
-    .minute(0)
-    .second(0);
-  const [isShowing, setIsShowing] = useState(true);
-  const checkTime = () => {
-    setInterval(() => {
-      const now = new dayjs();
-      now >= limitTime && setIsShowing(false);
-    }, 1000 * 60 * 3);
-    //inter val every 3 minutes
-  };
+  // const limitTime = new dayjs()
+  //   .date(31)
+  //   .month(9)
+  //   .year(2023)
+  //   .hour(19)
+  //   .minute(0)
+  //   .second(0);
+  const [isShowing, setIsShowing] = useState(false);
+  // const checkTime = () => {
+  //   setInterval(() => {
+  //     const now = new dayjs();
+  //     now >= limitTime && setIsShowing(false);
+  //   }, 1000 * 60 * 3);
+  //   //inter val every 3 minutes
+  // };
 
   useEffect(() => {
     fetchingData();
-    checkTime();
+    // checkTime();
   }, []);
 
   return (
@@ -300,7 +300,7 @@ export function Detail() {
             className="runnerText"
             speed={25}
           >
-            {isShowing ? (
+            {!isShowing ? (
               <span>Bạn cảm thấy hoạt động hôm nay như thế nào? Hãy cho Cóc Sài Gòn biết bằng cách <a href="https://docs.google.com/forms/d/e/1FAIpQLSeaUFMuKt4hL58wGuk7NwGzaLapYBjl-l8dsu11biezq6XWQA/viewform?fbclid=IwAR02HeunMEE8w65eVgbMBX1WjFVqyEMEuAPtH_jPylfavyF6fFxtK-D5qT4" target="_blank" style={{margin: '0 5px 0 0'}}><b>FEEDBACK</b></a> nhé</span>
             ) : (
               <span style={{ margin: "0 3px 0 3px" }}>
