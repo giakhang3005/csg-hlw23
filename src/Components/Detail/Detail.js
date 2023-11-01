@@ -52,9 +52,9 @@ export function Detail() {
   const fetchingData = () => {
     setLoading(true);
     //https://sheet.best/api/sheets/18ed97da-39f2-4c51-8efd-f16853cff5f9/search?mssv=
-    axios // https://sheetdb.io/api/v1/5ns7w9461kjnd/search?mssv=
+    axios // https://sheet.best/api/sheets/363b6a6f-20ca-4299-b4d2-b6c67ba11958/search?mssv=
       .get(
-        `https://sheet.best/api/sheets/363b6a6f-20ca-4299-b4d2-b6c67ba11958/search?mssv=${code}`
+        `https://sheetdb.io/api/v1/5ns7w9461kjnd/search?mssv=${code}`
       )
       .then((response) => (setUser(response.data), setLoading(false)))
       .catch((err) => console.log(err));
