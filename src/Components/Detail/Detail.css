@@ -13,6 +13,10 @@
   filter: brightness(100%);
   opacity: 0.65;
 }
+.trackTeam {
+  display: flex;
+  justify-content: center;
+}
 /* @keyframes stormCont {
   0% {
       opacity: 1;

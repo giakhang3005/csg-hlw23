@@ -23,7 +23,8 @@ import {
 } from "@ant-design/icons";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import dayjs from "dayjs";
+import { personalInformations, TrackingContent } from "./InformationsStored";
+
 //https://sheet.best/admin
 //https://docs.google.com/spreadsheets/d/1rDO_bu_1l6A7x5eclJ2QLIdywDwqA3es3p9LAiFFFsQ/edit#gid=0
 
@@ -53,9 +54,7 @@ export function Detail() {
     setLoading(true);
     //https://sheet.best/api/sheets/18ed97da-39f2-4c51-8efd-f16853cff5f9/search?mssv=
     axios // https://sheet.best/api/sheets/363b6a6f-20ca-4299-b4d2-b6c67ba11958/search?mssv=
-      .get(
-        `https://sheetdb.io/api/v1/5ns7w9461kjnd/search?mssv=${code}`
-      )
+      .get(`https://sheetdb.io/api/v1/5ns7w9461kjnd/search?mssv=${code}`)
       .then((response) => (setUser(response.data), setLoading(false)))
       .catch((err) => console.log(err));
   };
@@ -84,6 +83,7 @@ export function Detail() {
 
   return (
     <div className="DetailContainer">
+      {/* Back button */}
       <span className="back">
         <Button
           type="text"
@@ -92,10 +92,9 @@ export function Detail() {
         >
           Back
         </Button>
-        {/* <Button type="text" icon={<ReloadOutlined />} onClick={fetchingData}>
-          Refresh
-        </Button> */}
       </span>
+
+      {/* Title */}
       <Title
         level={3}
         style={Object.assign(
@@ -115,142 +114,71 @@ export function Detail() {
             <>
               <p className="timestamp">{user[0]?.time}</p>
 
-              {/* Name */}
-              <Row className="rowDetail" style={{ margin: "18px 0 0 0" }}>
-                <Col xs={2}></Col>
-                <Col xs={5}>
-                  <div className="detailTitle">TÊN:</div>
-                </Col>
-                <Col xs={17}>
-                  <div className="detailInfo preventCopy">{user[0]?.name}</div>
-                </Col>
-              </Row>
-
-              {/* MSSV */}
-              <Row className="rowDetail">
-                <Col xs={2}></Col>
-                <Col xs={5}>
-                  <div className="detailTitle">MSSV:</div>
-                </Col>
-                <Col xs={17}>
-                  <div className="detailInfo">{user[0]?.mssv}</div>
-                </Col>
-              </Row>
-
-              {/* EMAIL */}
-              <Row className="rowDetail">
-                <Col xs={2}></Col>
-                <Col xs={5}>
-                  <div className="detailTitle">EMAIL:</div>
-                </Col>
-                <Col xs={17}>
-                  <div className="detailInfo preventCopy">{user[0]?.email}</div>
-                </Col>
-              </Row>
-
-              {/* HLW CODE */}
-                <Row className="rowDetail">
-                  <Col xs={2}></Col>
-                  <Col xs={5}>
-                    <div className="detailTitle">CODE:</div>
-                  </Col>
-                  <Col xs={17}>
-                    <div className="detailInfo">{user[0]?.code}</div>
-                  </Col>
-                </Row>
+              {/* Personal Informations */}
+              {personalInformations.map((info, i) => {
+                return (
+                  <Row className="rowDetail">
+                    <Col xs={2}></Col>
+                    <Col xs={5}>
+                      <div className="detailTitle">{info.display}</div>
+                    </Col>
+                    <Col xs={17}>
+                      <div className="detailInfo">
+                        {info.isUrl ? (
+                          <Popover
+                            placement="top"
+                            content={user[0][info.index]}
+                          >
+                            <a href={user[0][info.index]} target="_blank">
+                              Click vào đây
+                            </a>
+                          </Popover>
+                        ) : (
+                          <div className="detailInfo preventCopy">
+                            {user[0][info.index]}
+                          </div>
+                        )}
+                      </div>
+                    </Col>
+                  </Row>
+                );
+              })}
 
               {/* TRACK STATUS */}
-              <Row className="rowDetail">
-                <Col xs={1}></Col>
-                <Col xs={4}>
-                  <Popover
-                    content={user[0]?.tram1 === "TRUE" ? doneMsg : notDoneMsg}
-                  >
-                    <Tag color={user[0]?.tram1 === "TRUE" ? "green" : "red"}>
-                      Trạm 1
-                    </Tag>
-                  </Popover>
-                </Col>
-                <Col xs={4}>
-                  <Popover
-                    content={user[0]?.tram2 === "TRUE" ? doneMsg : notDoneMsg}
-                  >
-                    <Tag color={user[0]?.tram2 === "TRUE" ? "green" : "red"}>
-                      Trạm 2
-                    </Tag>
-                  </Popover>
-                </Col>
-                <Col xs={4}>
-                  <Popover
-                    content={user[0]?.tram3 === "TRUE" ? doneMsg : notDoneMsg}
-                  >
-                    <Tag color={user[0]?.tram3 === "TRUE" ? "green" : "red"}>
-                      Trạm 3
-                    </Tag>
-                  </Popover>
-                </Col>
-                <Col xs={4}>
-                  <Popover
-                    content={user[0]?.tram4 === "TRUE" ? doneMsg : notDoneMsg}
-                  >
-                    <Tag color={user[0]?.tram4 === "TRUE" ? "green" : "red"}>
-                      Trạm 4
-                    </Tag>
-                  </Popover>
-                </Col>
-                <Col xs={4}>
-                  <Popover
-                    content={user[0]?.tram5 === "TRUE" ? doneMsg : notDoneMsg}
-                  >
-                    <Tag color={user[0]?.tram5 === "TRUE" ? "green" : "red"}>
-                      Trạm 5
-                    </Tag>
-                  </Popover>
-                </Col>
-                <Popover
-                  content={
-                    user[0]?.prize === "TRUE" ? ReceiveMsg : notReceiveMsg
-                  }
-                >
-                  <Col
-                    xs={2}
-                    style={Object.assign(
-                      { fontSize: "18px" },
-                      { color: user[0]?.prize === "TRUE" ? "#0fab36" : "red" }
-                    )}
-                  >
-                    <GiftFilled />
-                  </Col>
-                </Popover>
-                <Col xs={1}></Col>
+              <Row className="rowDetail trackTeam">
+                {TrackingContent.map((content, i) => {
+                  return (
+                    <Popover
+                      content={
+                        user[0][content.index] === "TRUE" ? doneMsg : notDoneMsg
+                      }
+                    >
+                      <Tag
+                        style={{ margin: "4px 5px 0 0" }}
+                        color={
+                          user[0][content.index] === "TRUE" ? "green" : "red"
+                        }
+                      >
+                        {content.name}
+                      </Tag>
+                    </Popover>
+                  );
+                })}
               </Row>
 
               {/* QR CODE */}
               <Row style={{ margin: "4px 0 2px 0" }}>
-                {isShowing ? (
-                  <>
-                    <Col xs={6}></Col>
-                    <Col xs={10}>
-                      <QRCode
-                        className="preventCopy"
-                        size={180}
-                        value={user[0]?.code}
-                      ></QRCode>
-                    </Col>
-                    <Col xs={6}></Col>{" "}
-                  </>
-                ) : (
-                  <Alert
-                    style={Object.assign(
-                      { width: " 100%" },
-                      { margin: "10px 5px 0 5px" }
-                    )}
-                    type="error"
-                    message={<b>CÁC BOOTH GAME ĐÃ ĐÓNG</b>}
-                    description="Các bạn vui lòng tập
-                    trung tại sân khấu để cùng chào đón các tiết mục vô cùng đặc sắc nhé ^^"
-                  ></Alert>
-                )}
+                <>
+                  <Col xs={6}></Col>
+                  <Col xs={10}>
+                    <QRCode
+                      className="preventCopy"
+                      size={180}
+                      value={user[0]?.code}
+                    ></QRCode>
+                  </Col>
+                  <Col xs={6}></Col>{" "}
+                </>
               </Row>
             </>
           ) : (
@@ -286,6 +214,8 @@ export function Detail() {
           <Spin size="large" style={{ margin: "164px 0 0 0" }} />
         )
       }
+
+      {/* Running text at the bottom */}
       <Alert
         type="error"
         icon={<WarningFilled />}
@@ -299,7 +229,17 @@ export function Detail() {
             speed={25}
           >
             {!isShowing ? (
-              <span style={{margin: '0 10px 0 0'}}>Bạn cảm thấy hoạt động hôm nay như thế nào? Hãy cho Cóc Sài Gòn biết bằng cách <a href="https://docs.google.com/forms/d/e/1FAIpQLSeaUFMuKt4hL58wGuk7NwGzaLapYBjl-l8dsu11biezq6XWQA/viewform?fbclid=IwAR02HeunMEE8w65eVgbMBX1WjFVqyEMEuAPtH_jPylfavyF6fFxtK-D5qT4" target="_blank" ><b>FEEDBACK</b></a> nhé</span>
+              <span style={{ margin: "0 10px 0 0" }}>
+                Bạn cảm thấy hoạt động hôm nay như thế nào? Hãy cho Cóc Sài Gòn
+                biết bằng cách{" "}
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSeaUFMuKt4hL58wGuk7NwGzaLapYBjl-l8dsu11biezq6XWQA/viewform?fbclid=IwAR02HeunMEE8w65eVgbMBX1WjFVqyEMEuAPtH_jPylfavyF6fFxtK-D5qT4"
+                  target="_blank"
+                >
+                  <b>FEEDBACK</b>
+                </a>{" "}
+                nhé
+              </span>
             ) : (
               <span style={{ margin: "0 3px 0 3px" }}>
                 Các booth game sẽ đóng vào lúc
